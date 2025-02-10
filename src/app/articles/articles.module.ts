@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
 import { ArticlesPageRoutingModule } from './articles-routing.module';
 import { ArticlesListPage } from './articles-list/articles-list.page';
 import { ArticleDetailPage } from './article-detail/article-detail.page';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   imports: [
@@ -13,6 +13,9 @@ import { ArticleDetailPage } from './article-detail/article-detail.page';
     IonicModule,
     ArticlesPageRoutingModule
   ],
-  declarations: [ArticlesListPage, ArticleDetailPage]
+  declarations: [
+    ArticlesListPage,
+    ArticleDetailPage
+  ]
 })
-export class ArticlesPageModule {}
+export class ArticlesModule { }

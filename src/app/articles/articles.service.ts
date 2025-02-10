@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Article } from '../common/article-response.interface';
 import { ApiResponse } from '../common/api-response-interface';
+import { identity } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,5 +21,21 @@ export class ArticlesService {
       console.error('Fetch error',error);
       throw error;
     }
+  }
+
+  async getArticleById(id:number): Promise<ApiResponse<Article>>{
+    try {
+      const response = await fetch(`${this.apiUrl}/${id}`);
+      
+      if(!response.ok){
+        throw new Error(`Network response was not ok`);
+      }
+      const data: ApiResponse<Article> = await response.json();
+
+      return data;
+      }catch(error){
+        console.error('Fetch error',error);
+        throw error;
+      }
   }
 }
