@@ -14,7 +14,7 @@ const routes: Routes = [
     component: ArticlesListPage
   },
   {
-    path: 'detail/:id',
+    path: ':id/detail',
     component: ArticleDetailPage
   }
 ];
