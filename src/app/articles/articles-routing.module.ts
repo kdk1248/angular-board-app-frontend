@@ -6,7 +6,7 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'list',
     pathMatch: 'full'
   },
   {
