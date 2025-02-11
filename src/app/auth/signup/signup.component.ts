@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserRole } from 'src/app/common/user-role-enum';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -15,19 +17,34 @@ export class SignupComponent  implements OnInit {
   passwordConfirm: string = '';
   role: UserRole = UserRole.USER;
 
-  constructor() { }
+  constructor(
+    private authService: AuthService, 
+    private router: Router) { }
 
   ngOnInit() {}
 
-  onSignUp(){
+  async onSignUp(){
     const signUpData = {
       email: this.email,
       username: this.username,
       password: this.password,
       passwordConfirm: this.passwordConfirm,
-      role: this.role,
+      role: UserRole.USER,
     }
     console.log('signUpData:',signUpData);
+
+    try {
+      const response = await this.authService.signUp(signUpData);
+      if(response.success){
+        console.log(response)
+        this.router.navigate(['auth'])
+      } else{
+        console.log('Sign up Failed', response.message);
+      }
+    } catch (error) {
+      console.log('Sign Up Error', error);
+      
+    }
   }
 
 }
