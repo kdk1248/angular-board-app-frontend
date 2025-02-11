@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
-import { ArticlesPageRoutingModule } from './articles-routing.module';
-import { ArticlesListPage } from './articles-list/articles-list.page';
-import { ArticleDetailPage } from './article-detail/article-detail.page';
+import { ArticlesRoutingModule } from './articles-routing.module';
+import { ArticlesListComponent } from './articles-list/articles-list.component';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
@@ -11,11 +11,11 @@ import { IonicModule } from '@ionic/angular';
     CommonModule,
     FormsModule,
     IonicModule,
-    ArticlesPageRoutingModule,
+    ArticlesRoutingModule,
   ],
   declarations: [
-    ArticlesListPage,
-    ArticleDetailPage
+    ArticlesListComponent,
+    ArticleDetailComponent
   ]
 })
 export class ArticlesModule { }
