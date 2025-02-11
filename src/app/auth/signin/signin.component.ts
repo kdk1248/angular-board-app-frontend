@@ -6,12 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signin.component.scss'],
   standalone:false,
 })
-export class SigninComponent  implements OnInit {
+export class SigninComponent implements OnInit {
+  email:string = '';
+  password:string = '';
 
   constructor() { }
 
   ngOnInit() {}
 
-  onSignIn(){}
+  onSignIn(){
+    const signInData = {
+      email: this.email,
+      password: this.password,
+    }
+    console.log('signInData:', signInData);
+  }
 
 }
