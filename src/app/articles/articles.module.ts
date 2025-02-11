@@ -11,7 +11,7 @@ import { IonicModule } from '@ionic/angular';
     CommonModule,
     FormsModule,
     IonicModule,
-    ArticlesPageRoutingModule
+    ArticlesPageRoutingModule,
   ],
   declarations: [
     ArticlesListPage,

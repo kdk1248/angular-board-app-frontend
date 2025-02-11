@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ArticlesModule } from './articles/articles.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,8 @@ import { ArticlesModule } from './articles/articles.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     ArticlesModule,
+    AuthModule,
+    
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
